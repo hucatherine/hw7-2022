@@ -39,7 +39,7 @@ document.querySelector("#faster").addEventListener("click", function() {
 // Advance ideo by 10 seconds. If video length is exceeded, go back to start of video - no farther. Log current location of video
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip ahead");
-	newTime = video.currentTime + 10;
+	var newTime = video.currentTime + 10;
 	if(newTime < video.duration) {
 		video.currentTime = newTime;
 	}
@@ -65,10 +65,10 @@ document.querySelector("#mute").addEventListener("click", function() {
 
 // Change volume based on slider and update the volume information
 document.querySelector("#slider").addEventListener("change", function() {
-	newVolume = document.querySelector("#slider").value;
+	var newVolume = document.querySelector("#slider").value;
 	document.querySelector("#volume").innerHTML = newVolume + "%";
 	video.volume = newVolume/100;
-	console.log("The current value is " + newVolume);
+	console.log("The current value is " + newVolume/100);
 });
 
 // Utilize existing oldSchool class on video element
